@@ -11,6 +11,9 @@ with(open('prime.txt','r+')) as f:
         print("currently testing: " + str(curNum))
         isPrime = True
         for i in primeSetInt:
+            if math.sqrt(curNum) == math.floor(math.sqrt(curNum)):
+                isPrime == False
+                break
             if i > math.floor(math.sqrt(curNum)):
                 break
             if curNum % 5 == 0 or curNum % i == 0:
@@ -21,4 +24,5 @@ with(open('prime.txt','r+')) as f:
             f.write(str(curNum) + '\n')
             primeSetInt.append(curNum)
             print("this number is prime: " + str(curNum))
+
             print("size of set is now: " + str(len(primeSetInt)))
